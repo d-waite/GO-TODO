@@ -15,7 +15,7 @@ func main() {
 
 	app.Get("/:name?", func(c *fiber.Ctx) error {
 		name := c.Params("name")
-		return c.SendString("hi greg")
+		return Render(c, hello(name))
 	})
 
 	app.Listen(":3000")
